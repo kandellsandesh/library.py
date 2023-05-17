@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signup</title>
+
+    <style>
+  body {
+  background-color:hsla(114, 32%, 76%, 0.932);
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 30%;
+  padding: 10px;
+  border: none;
+  background-color: rgb(216, 240, 215);
+  border-radius: 5px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.2s ease-in-out;
+  margin-bottom: 14px;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus
+{
+  outline: none;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2), 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+label {
+  font-size: 20px;
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+}
+p {
+      font-size: 20px;
+    }
+    
+.btn {
+  background-color: #0091ff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background-color: #0378d2;
+}
+
+
+    </style>
+</head>
+<body>
+    <center><h1><b>Signup Page</b> </h1><br><br>
+
+    <div class="container-fluid">
+    <div class="row">
+    <div class="col-mod-6" style="margin: 0 auto;">
+     <form method="post" >
+      {% csrf_token %}
+       
+        <div>
+            <label>Username</label><br>
+            <input type="text" name="username"><br>
+        </div>
+
+        <div>
+            <label>Email</label><br>
+            <input type="text" name="email"><br>
+        </div>
+
+        <div>
+            <label>Password</label><br>
+            <input type="password" name="password"><br>
+        </div>
+      
+        <div>
+          <label>Confirm Password</label><br>
+          <input type="password" name="cpassword"><br>
+      </div>
+      </center>
+      <center>
+        <div >
+          <button type="submit" class="btn btn-primary">submit</button></div> <br>
+      
+
+  <h3><a href="{% url 'login' %}"> Already have an account? </a></h3><br><br></center>
+    
+     </form>
+    </div>
+    </div>
+    </div>
+
+
+</body>
+</html>
