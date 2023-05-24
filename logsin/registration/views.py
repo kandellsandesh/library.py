@@ -2,6 +2,7 @@ from django.shortcuts import render,HttpResponse,redirect
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.decorators import login_required
+from django.core.mail import send_mail
 
 # Create your views here.
 
@@ -53,4 +54,13 @@ def logoutpage(request):
 @login_required(login_url='login')
 def home(request):
     return render(request,'home.html')
+
+
+def send_template_email(request):
+    subject='this is the demo for sending email'
+    plain_message="hey, just completed email integration on django"
+    from_email='sandeshkandel1111@gmail.com'
+    to_email=['abinashpoudel54321@gmail.com']
+    send_mail(subject,plain_message,from_email,to_email)
+    return HttpResponse('email send successfully')
     
